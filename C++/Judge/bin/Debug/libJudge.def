@@ -1,0 +1,4 @@
+EXPORTS
+    DllMain@12 @1
+    SomeFunction @2
+    _Z5JudgePKcS0_S0_S0_S0_RiS1_S1_ @3

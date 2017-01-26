@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1485433482 source:c:\users\jeremyguo\desktop\gjudge_visable\c++\judge\main.cpp
+	"main.h"
+
+1485433410 c:\users\jeremyguo\desktop\gjudge_visable\c++\judge\main.h
+	<windows.h>
+	<cstdio>
+	<psapi.h>
+	<cctype>
+
