@@ -81,7 +81,7 @@ namespace JudgeMini
 					arr.Add(id);
 			}
 			diag = new JudgeDiag();
-			diag.Init(arr);
+			diag.Init(arr, in_pre, in_bak, out_pre, out_bak, execute_name);
 			diag.ShowDialog();
 		}
 	}

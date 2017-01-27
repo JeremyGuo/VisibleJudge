@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Judge_v1.0.1.dll" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="JudgeDiag.resx">
