@@ -20,6 +20,14 @@ namespace JudgeMini
 	/// <summary>
 	/// Description of MainForm.
 	/// </summary>
+	/// 
+	
+	public class Comparer : IComparer {
+		public int Compare(object x, object y){
+			return (Int32.Parse((string)x)-Int32.Parse((string)y));
+		}
+	}
+	
 	public partial class MainForm : Form
 	{
 		private JudgeDiag diag;
@@ -95,6 +103,8 @@ namespace JudgeMini
 				MessageBox.Show("编译错误", "代码错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return ;
 			}
+			
+			arr.Sort(new Comparer());
 			
 			diag = new JudgeDiag();
 			diag.Init(arr, in_pre, in_bak, out_pre, out_bak, execute_name);

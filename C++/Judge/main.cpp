@@ -94,9 +94,22 @@ void write_info(LPCSTR path){
 void DLL_EXPORT Compile(const LPCSTR name, const LPCSTR args){
     SetErrorMode(SEM_NOGPFAULTERRORBOX);
 
+    STARTUPINFO si;
+    PROCESS_INFORMATION pi;
+    SECURITY_ATTRIBUTES sa;
+
+    ZeroMemory(&si, sizeof(si));
+    si.cb = sizeof(si);
+    si.dwFlags = STARTF_USESTDHANDLES;
+    ZeroMemory(&pi, sizeof(pi));
+    ZeroMemory(&sa, sizeof(sa));
+    sa.bInheritHandle = TRUE;
+
     char cmd[1024];
     sprintf(cmd, "g++ %s.cpp -o %s -Wall %s", (char*)name, (char*)name, (char*)args);
-    system(cmd);
+
+    CreateProcess(NULL, cmd, NULL, &sa, TRUE, HIGH_PRIORITY_CLASS | CREATE_NO_WINDOW, NULL, NULL, &si, &pi);
+    WaitForSingleObject(pi.hProcess, INFINITE);
 
     #ifdef DEBUG
     FILE* fp = fopen("debug.log", "w");
