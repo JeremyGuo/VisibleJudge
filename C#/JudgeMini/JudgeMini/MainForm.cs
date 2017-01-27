@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Collections;
 using System.Threading;
+using System.Runtime.InteropServices;
 
 namespace JudgeMini
 {
@@ -23,6 +24,9 @@ namespace JudgeMini
 	{
 		private JudgeDiag diag;
 		private ArrayList arr;
+		
+		[DllImport("Judge_v1.0.2")]
+		private static extern void Compile(string name, string args);
 		
 		public MainForm()
 		{
@@ -80,6 +84,18 @@ namespace JudgeMini
 				if(dir.GetFiles(out_pre + id + out_bak).Length != 0)
 					arr.Add(id);
 			}
+			
+			if(dir.GetFiles(execute_name+".cpp").Length == 0){
+				MessageBox.Show("找不到程序源码", "信息错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return ;
+			}
+			
+			Compile(execute_name, extra_args);
+			if(dir.GetFiles(execute_name+".exe").Length == 0){
+				MessageBox.Show("编译错误", "代码错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				return ;
+			}
+			
 			diag = new JudgeDiag();
 			diag.Init(arr, in_pre, in_bak, out_pre, out_bak, execute_name);
 			diag.ShowDialog();

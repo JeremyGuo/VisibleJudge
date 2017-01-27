@@ -90,14 +90,12 @@ void write_info(LPCSTR path){
     fclose(fp);
 }
 
-int DLL_EXPORT Compile(const LPCSTR name, const LPCSTR args){
+void DLL_EXPORT Compile(const LPCSTR name, const LPCSTR args){
     SetErrorMode(SEM_NOGPFAULTERRORBOX);
 
     char cmd[1024];
-    sprintf(cmd, "g++ %s.cpp -o %s %s", (char*)name, (char*)name, (char*)args);
+    sprintf(cmd, "g++ %s.cpp -o -Wall %s %s", (char*)name, (char*)name, (char*)args);
     system(cmd);
-
-    return 0;
 }
 
 void DLL_EXPORT Judge(const LPCSTR exe, const LPCSTR indata, const LPCSTR outdata, const LPCSTR userdata, const LPCSTR result, int& ans, int &tm, int &mem){

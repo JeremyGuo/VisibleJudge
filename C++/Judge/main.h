@@ -28,7 +28,7 @@ extern "C"
 {
 #endif
 
-int DLL_EXPORT Compile(const LPCSTR name, const LPCSTR args);\
+void DLL_EXPORT Compile(const LPCSTR name, const LPCSTR args);\
 void DLL_EXPORT SomeFunction(const LPCSTR sometext);\
 void DLL_EXPORT Judge(const LPCSTR exe, const LPCSTR indata, const LPCSTR outdata, const LPCSTR userdata, const LPCSTR result, int& ans, int& tm, int& mem);\
 
