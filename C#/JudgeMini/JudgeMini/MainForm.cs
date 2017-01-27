@@ -25,7 +25,7 @@ namespace JudgeMini
 		private JudgeDiag diag;
 		private ArrayList arr;
 		
-		[DllImport("Judge_v1.0.2")]
+		[DllImport("./Judge.dll")]
 		private static extern void Compile(string name, string args);
 		
 		public MainForm()

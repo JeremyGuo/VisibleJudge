@@ -22,7 +22,6 @@
     #define DLL_EXPORT __declspec(dllimport)
 #endif
 
-
 #ifdef __cplusplus
 extern "C"
 {

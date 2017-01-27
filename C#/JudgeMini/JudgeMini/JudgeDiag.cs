@@ -32,7 +32,7 @@ namespace JudgeMini
 			//
 		}
 		
-		[DllImport("Judge_v1.0.2")]
+		[DllImport("./Judge.dll")]
 		private static extern void Judge(string exe, string indata, string outdata, string userdata, string result, ref int ans, ref int tm, ref int mem);
 		
 		ArrayList data;
@@ -50,15 +50,15 @@ namespace JudgeMini
 			int sz = data.Count;
 			listView1.BeginUpdate();
 			for(int i=0;i<sz;i++){
-				ListViewItem lvi = new ListViewItem();
-				lvi.SubItems.Add((string)data[i]);
+				ListViewItem lvi = listView1.Items.Add((string)data[i]);
+				lvi.UseItemStyleForSubItems = false;
+				//MessageBox.Show((string)data[i], "none", MessageBoxButtons.OK, MessageBoxIcon.None);
 				lvi.SubItems.Add("Pending");
 				lvi.SubItems.Add("不可用");
 				lvi.SubItems.Add("不可用");
-				
-				for(int j=0;j<4;j++)
+				for(int j=1;j<4;j++)
 					lvi.SubItems[j].BackColor = Color.LightGray;
-				listView1.Items.Add(lvi);
+				//listView1.Items.Add(lvi);
 			}
 			listView1.EndUpdate();
 		}
@@ -80,6 +80,7 @@ namespace JudgeMini
 				int tm=0, mem=0, stat=0;
 				Judge(execute+".exe", in_name, out_name, "tmp.out", "tmp.result.out", ref stat, ref tm, ref mem);
 				
+				listView1.BeginUpdate();
 				if(stat == 0){
 					listView1.Items[i].SubItems[1].BackColor = Color.Green;
 					listView1.Items[i].SubItems[1].Text = "Accepted";
@@ -96,6 +97,8 @@ namespace JudgeMini
 				
 				listView1.Items[i].SubItems[2].Text = tm.ToString();
 				listView1.Items[i].SubItems[3].Text = mem.ToString();
+				
+				listView1.EndUpdate();
 			}
 			this.button1.Text = "关闭";
 		}

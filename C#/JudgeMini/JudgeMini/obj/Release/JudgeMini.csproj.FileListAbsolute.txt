@@ -1,0 +1,7 @@
+C:\Users\JeremyGuo\Desktop\GJudge_visable\VisibleJudge\C#\JudgeMini\JudgeMini\bin\Release\JudgeMini.exe.config
+C:\Users\JeremyGuo\Desktop\GJudge_visable\VisibleJudge\C#\JudgeMini\JudgeMini\bin\Release\JudgeMini.exe
+C:\Users\JeremyGuo\Desktop\GJudge_visable\VisibleJudge\C#\JudgeMini\JudgeMini\obj\Release\JudgeMini.csprojResolveAssemblyReference.cache
+C:\Users\JeremyGuo\Desktop\GJudge_visable\VisibleJudge\C#\JudgeMini\JudgeMini\obj\Release\JudgeMini.JudgeDiag.resources
+C:\Users\JeremyGuo\Desktop\GJudge_visable\VisibleJudge\C#\JudgeMini\JudgeMini\obj\Release\JudgeMini.MainForm.resources
+C:\Users\JeremyGuo\Desktop\GJudge_visable\VisibleJudge\C#\JudgeMini\JudgeMini\obj\Release\JudgeMini.csproj.GenerateResource.Cache
+C:\Users\JeremyGuo\Desktop\GJudge_visable\VisibleJudge\C#\JudgeMini\JudgeMini\obj\Release\JudgeMini.exe
