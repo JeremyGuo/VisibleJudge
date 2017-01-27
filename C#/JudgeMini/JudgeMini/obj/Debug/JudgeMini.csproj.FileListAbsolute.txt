@@ -4,3 +4,5 @@ C:\Users\JeremyGuo\Desktop\GJudge_visable\VisibleJudge\C#\JudgeMini\JudgeMini\bi
 C:\Users\JeremyGuo\Desktop\GJudge_visable\VisibleJudge\C#\JudgeMini\JudgeMini\obj\Debug\JudgeMini.csprojResolveAssemblyReference.cache
 C:\Users\JeremyGuo\Desktop\GJudge_visable\VisibleJudge\C#\JudgeMini\JudgeMini\obj\Debug\JudgeMini.exe
 C:\Users\JeremyGuo\Desktop\GJudge_visable\VisibleJudge\C#\JudgeMini\JudgeMini\obj\Debug\JudgeMini.pdb
+C:\Users\JeremyGuo\Desktop\GJudge_visable\VisibleJudge\C#\JudgeMini\JudgeMini\obj\Debug\JudgeMini.MainForm.resources
+C:\Users\JeremyGuo\Desktop\GJudge_visable\VisibleJudge\C#\JudgeMini\JudgeMini\obj\Debug\JudgeMini.csproj.GenerateResource.Cache
