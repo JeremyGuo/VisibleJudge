@@ -22,6 +22,8 @@ namespace JudgeMini
 		private System.Windows.Forms.TextBox textBox2;
 		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.TextBox textBox4;
+		private System.Windows.Forms.TextBox textBox3;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -45,6 +47,8 @@ namespace JudgeMini
 			this.button1 = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.textBox4 = new System.Windows.Forms.TextBox();
+			this.textBox3 = new System.Windows.Forms.TextBox();
 			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
@@ -62,6 +66,7 @@ namespace JudgeMini
 			this.button1.TabIndex = 0;
 			this.button1.Text = "Judge";
 			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.Button1Click);
 			// 
 			// label1
 			// 
@@ -75,6 +80,8 @@ namespace JudgeMini
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.textBox4);
+			this.groupBox1.Controls.Add(this.textBox3);
 			this.groupBox1.Controls.Add(this.textBox2);
 			this.groupBox1.Controls.Add(this.textBox1);
 			this.groupBox1.Controls.Add(this.label4);
@@ -88,6 +95,22 @@ namespace JudgeMini
 			this.groupBox1.TabIndex = 2;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "评测信息";
+			// 
+			// textBox4
+			// 
+			this.textBox4.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.textBox4.Location = new System.Drawing.Point(80, 137);
+			this.textBox4.Name = "textBox4";
+			this.textBox4.Size = new System.Drawing.Size(141, 26);
+			this.textBox4.TabIndex = 8;
+			// 
+			// textBox3
+			// 
+			this.textBox3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.textBox3.Location = new System.Drawing.Point(80, 103);
+			this.textBox3.Name = "textBox3";
+			this.textBox3.Size = new System.Drawing.Size(141, 26);
+			this.textBox3.TabIndex = 7;
 			// 
 			// textBox2
 			// 
@@ -112,7 +135,7 @@ namespace JudgeMini
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(68, 24);
 			this.label4.TabIndex = 4;
-			this.label4.Text = "label4";
+			this.label4.Text = "输出文件";
 			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// label3
@@ -122,7 +145,7 @@ namespace JudgeMini
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(68, 24);
 			this.label3.TabIndex = 3;
-			this.label3.Text = "label3";
+			this.label3.Text = "输入文件";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// label2
@@ -132,7 +155,7 @@ namespace JudgeMini
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(68, 24);
 			this.label2.TabIndex = 2;
-			this.label2.Text = "label2";
+			this.label2.Text = "参数";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// MainForm
