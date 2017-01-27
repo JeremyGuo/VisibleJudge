@@ -60,6 +60,7 @@ namespace JudgeMini
 			for(int i=0;i<sz;i++){
 				
 			}
+			this.button1.Enabled = false;
 		}
 		void Button1Click(object sender, EventArgs e)
 		{
