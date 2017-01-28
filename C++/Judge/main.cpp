@@ -117,8 +117,13 @@ void DLL_EXPORT Compile(const LPCSTR name, const LPCSTR args){
     fclose(fp);
     #endif // DEBUG
 }
-
-void DLL_EXPORT Judge(const LPCSTR exe, const LPCSTR indata, const LPCSTR outdata, const LPCSTR userdata, const LPCSTR result, int& ans, int &tm, int &mem){
+#define INF 536870912
+#define offset 100
+void DLL_EXPORT Judge(const LPCSTR exe, const LPCSTR indata, const LPCSTR outdata, const LPCSTR userdata, const LPCSTR result, int& ans, int &tm, int &mem, int mem_lmt, int time_lmt){
+    /*TR result, int&
+    mem -> byte
+    time -> ms
+    */
     SetErrorMode(SEM_NOGPFAULTERRORBOX);
 
     STARTUPINFO si;
@@ -144,12 +149,15 @@ void DLL_EXPORT Judge(const LPCSTR exe, const LPCSTR indata, const LPCSTR outdat
         ans = UNABLEOPENEXE;
         return ;
     }
-    WaitForSingleObject(pi.hProcess, INFINITE);
+    WaitForSingleObject(pi.hProcess, (long)time_lmt);
     unsigned long exitCode;
     GetExitCodeProcess(pi.hProcess, &exitCode);
     if(exitCode != 0){
         completeClose(si, pi);
-        ans = RUNTIMEERROR;
+        if(exitCode == STILL_ACTIVE)
+            ans = TIMELIMITEXCEED;
+        else
+            ans = RUNTIMEERROR;
         return ;
     }
     FILETIME creationTime, exitTime, kernelTime, userTime;
@@ -165,6 +173,13 @@ void DLL_EXPORT Judge(const LPCSTR exe, const LPCSTR indata, const LPCSTR outdat
     PROCESS_MEMORY_COUNTERS_EX info;
     GetProcessMemoryInfo(pi.hProcess, (PROCESS_MEMORY_COUNTERS*)&info, sizeof(info));
     mem = info.PeakWorkingSetSize;
+
+    if(mem > mem_lmt + offset){
+        completeClose(si, pi);
+        tm = -1, mem = -1;
+        ans = MEMORYLIMITEXCEED;
+        return ;
+    }
 
     if((ans = Compare(outdata, userdata)) == WRONGANSWER)
         write_info(result);

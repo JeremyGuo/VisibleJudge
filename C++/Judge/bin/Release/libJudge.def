@@ -1,5 +1,5 @@
 EXPORTS
     Compile @1
     DllMain@12 @2
-    Judge @3
-    SomeFunction @4
+    SomeFunction @3
+    _Z5JudgePKcS0_S0_S0_S0_RiS1_S1_ii @4

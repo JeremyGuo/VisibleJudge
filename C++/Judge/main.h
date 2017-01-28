@@ -12,6 +12,8 @@
 #define WRONGANSWER 1
 #define RUNTIMEERROR 2
 #define PERMUTATIONERROR 3
+#define TIMELIMITEXCEED 4
+#define MEMORYLIMITEXCEED 5
 /*  To use this exported function of dll, include this header
  *  in your project.
  */
