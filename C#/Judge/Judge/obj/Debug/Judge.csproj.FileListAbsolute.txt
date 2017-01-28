@@ -1,0 +1,6 @@
+C:\Users\JeremyGuo\Desktop\GJudge_visable\VisibleJudge\C#\Judge\Judge\bin\Debug\Judge.exe.config
+C:\Users\JeremyGuo\Desktop\GJudge_visable\VisibleJudge\C#\Judge\Judge\bin\Debug\Judge.exe
+C:\Users\JeremyGuo\Desktop\GJudge_visable\VisibleJudge\C#\Judge\Judge\bin\Debug\Judge.pdb
+C:\Users\JeremyGuo\Desktop\GJudge_visable\VisibleJudge\C#\Judge\Judge\obj\Debug\Judge.csprojResolveAssemblyReference.cache
+C:\Users\JeremyGuo\Desktop\GJudge_visable\VisibleJudge\C#\Judge\Judge\obj\Debug\Judge.exe
+C:\Users\JeremyGuo\Desktop\GJudge_visable\VisibleJudge\C#\Judge\Judge\obj\Debug\Judge.pdb
